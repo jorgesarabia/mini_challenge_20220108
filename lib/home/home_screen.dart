@@ -3,7 +3,12 @@ import 'package:mini_challenge_20220108/home/widgets/item_card.dart';
 import 'package:mini_challenge_20220108/menu/menu.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({
+    Key? key,
+    required this.env,
+  }) : super(key: key);
+
+  final String env;
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +17,7 @@ class HomeScreen extends StatelessWidget {
       body: ListView.builder(
         itemBuilder: (context, index) {
           if (index == 0) {
-            return const Menu();
+            return Menu(env: env);
           }
 
           return Padding(
