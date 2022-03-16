@@ -57,6 +57,25 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+    
+    flavorDimensions "flavor-type"
+
+    productFlavors {
+        dev {
+            dimension "flavor-type"
+            resValue "string", "app_name", "MiniChallenge Dev"
+            applicationIdSuffix ".dev"
+        }
+        staging {
+            dimension "flavor-type"
+            resValue "string", "app_name", "MiniChallenge Test"
+            applicationIdSuffix ".test"
+        }
+        prod {
+            dimension "flavor-type"
+            resValue "string", "app_name", "MiniChallenge"
+        }
+    }
 }
 
 flutter {
